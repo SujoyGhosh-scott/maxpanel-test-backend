@@ -4,6 +4,8 @@ const User = require("../models/User");
 
 // expecting email and password in request body
 router.post("/signup", async (req, res) => {
+  console.log("signup ", req.body);
+
   if (!req.body.email || !req.body.password) {
     res.status(400).send({
       success: false,
@@ -24,6 +26,8 @@ router.post("/signup", async (req, res) => {
 
 // expecting email and password in request body
 router.post("/login", async (req, res) => {
+  console.log("login ", req.body);
+
   if (!req.body.email || !req.body.password) {
     res.status(400).send({
       success: false,
